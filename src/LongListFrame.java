@@ -18,23 +18,23 @@ public class LongListFrame extends JFrame
    public LongListFrame(WordListModel m)
    {
 	  setSize(600, 400);
-	  
+
       wordList = new JList<String>(m);
       wordList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-      wordList.setPrototypeCellValue("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+      wordList.setPrototypeCellValue("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
       wordList.setVisibleRowCount(12);
-      
+
       JScrollPane scrollPane = new JScrollPane(wordList);
       m.setListInstance(wordList, scrollPane);
-      
+
       add(scrollPane);
       pack();
    }
-   
+
    public void showDialog(){
 	   new SettingDialog(this).setVisible(true);
    }
-   
+
    private class SettingDialog extends JDialog
    {
       public SettingDialog(LongListFrame frame)
@@ -43,18 +43,18 @@ public class LongListFrame extends JFrame
 
          // add HTML label to center
          setPreferredSize(new Dimension(400,300));
-         
+
          JPanel pan=new JPanel();
          pan.setLayout(new GridBagLayout());
-         
-         
+
+
          JLabel urLabel = new JLabel("RoomId");
          pan.add(urLabel);
          JTextField urlText = new JTextField("", 20);
      	  pan.add(urlText);
 
      	JDialog outer = this;
-     	
+
 
          // add OK button to southern border
       // OK button closes the dialog
@@ -72,7 +72,7 @@ public class LongListFrame extends JFrame
                }
             });
 
-         
+
          pan.add(ok);
          add(pan);
 
