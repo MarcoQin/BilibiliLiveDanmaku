@@ -5,3 +5,6 @@ written in java
 **Compile and run**
 
 ./compile_run.sh
+
+![launch](/screenshots/launch)
+![show](/screenshots/show)
