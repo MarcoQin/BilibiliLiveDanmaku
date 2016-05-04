@@ -6,5 +6,5 @@ written in java
 
 ./compile_run.sh
 
-![launch](/screenshots/launch)
-![show](/screenshots/show)
+![launch](/screenshots/launch.png)
+![show](/screenshots/show.png)
