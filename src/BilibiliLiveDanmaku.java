@@ -21,7 +21,7 @@ import org.json.simple.parser.JSONParser;
 /**
  * This program makes a socket connection to the atomic clock in Boulder, Colorado, and prints the time that the server
  * sends.
- * 
+ *
  * @version 1.20 2004-08-03
  * @author Cay Horstmann
  */
@@ -44,8 +44,8 @@ public class BilibiliLiveDanmaku
              t.start();
           }
        });
-	   
-      
+
+
    }
 }
 
@@ -54,7 +54,7 @@ class Comment implements Runnable
 {
 	private static WordListModel m = null;
 	private static int roomId = 0;
-	
+
 	public static void setRoomId(int id) {
 		roomId = id;
 	}
@@ -62,14 +62,19 @@ class Comment implements Runnable
 	public Comment(WordListModel model) {
 		m = model;
 	}
-	
+
 	private int randInt(int min, int max) {
 		return ThreadLocalRandom.current().nextInt(min, max + 1);
 	}
-	
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
+        if (roomId == 0)
+        {
+            return;
+        }
+
 		try (Socket s = new Socket("livecmt-1.bilibili.com", 88))
       {
 			s.setKeepAlive(true);
@@ -134,14 +139,14 @@ class Comment implements Runnable
       	} catch (IOException e1) {
 		}
 	}
-	
+
 }
 
 class HandShake implements Runnable
 {
 	private OutputStream outPut = null;
 	private byte[] ensure = DatatypeConverter.parseHexBinary("01020004");
-	
+
 	public HandShake(OutputStream outs) {
 		// TODO Auto-generated constructor stub
 		outPut = outs;
@@ -178,7 +183,7 @@ class HandShake implements Runnable
 			}
        	 }
 	}
-	
+
 }
 }
 
@@ -201,7 +206,7 @@ class Extract
 	    }
 		return "";
 	}
-	
+
 	public static List<String> extractAll(String begin, String end, String html){
 		List<String> list = new ArrayList<>();
 		if (html == null || html.equals("")){
@@ -210,7 +215,7 @@ class Extract
 		int fromPos = 0;
 		int endPos = 0;
 		int start = 0;
-		
+
 		while(true){
 			start = html.indexOf(begin, fromPos);
 			if (start >= 0){
