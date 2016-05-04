@@ -1,3 +1,19 @@
 Bilibili live danmaku displayer
 
-write in java
+written in java
+
+**Compile**
+
+cd src/
+
+javac -classpath ../lib/json-simple-1.1.1.jar *.java
+
+jar cvfm ../BilibiliLiveDanmaku.jar MANIFEST.MF  *.class
+
+**RUN**
+
+java -jar BilibiliLiveDanmaku.jar
+
+or
+
+double click BilibiliLiveDanmaku.jar
