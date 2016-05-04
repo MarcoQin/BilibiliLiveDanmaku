@@ -8,7 +8,7 @@ cd src/
 
 javac -classpath ../lib/json-simple-1.1.1.jar *.java
 
-jar cvfm ../BilibiliLiveDanmaku.jar MANIFEST.MF  *.class
+jar cvfm ../BilibiliLiveDanmaku.jar MANIFEST.MF  *.class ../lib/*.jar
 
 **RUN**
 
